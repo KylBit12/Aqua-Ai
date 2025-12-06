@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua AI - Ваш Голосовой Ассистент</title>
+    <!-- Google Fonts: Montserrat для основного текста -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Ваш CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Нейронная сеть на Canvas -->
+    <canvas id="neuron-canvas"></canvas>
+    <!-- Плавающие частицы (сохраняем для дополнительного эффекта) -->
+    <div class="floating-particles-container"></div>
+
+    <!-- Кастомный курсор -->
+    <div class="custom-cursor"></div>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Aqua AI</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">О Aqua</a></li>
+                    <li><a href="#features">Функции</a></li>
+                    <li><a href="#demo">Демо</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <a href="#demo" class="btn header-btn">Попробовать</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1 class="neon-text">Aqua AI:<br> Ваш Голос, Наша Интеллект.</h1>
+                <p class="hero-subtitle">Интуитивный голосовой помощник с неограниченными возможностями.</p>
+                <div class="voice-wave-container">
+                    <div class="voice-wave"></div>
+                    <div class="voice-wave delay-1"></div>
+                    <div class="voice-wave delay-2"></div>
+                    <div class="voice-wave delay-3"></div>
+                    <div class="voice-wave delay-4"></div>
+                </div>
+                <button class="btn primary-btn pulse-effect">
+                    <i class="fas fa-microphone"></i> Начать Говорить
+                </button>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padded">
+            <div class="container">
+                <h2 class="neon-text">Что такое Aqua AI?</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Aqua AI - это передовой голосовой ассистент, разработанный для того, чтобы сделать вашу цифровую жизнь проще и продуктивнее. Забудьте о наборе текста — просто произнесите свой запрос, и Aqua AI мгновенно его обработает.</p>
+                        <p>Наш помощник использует мощные алгоритмы искусственного интеллекта для понимания естественной речи, предоставляя точные ответы, выполняя команды и интегрируясь с вашими любимыми приложениями.</p>
+                    </div>
+                    <div class="about-icon">
+                        <i class="fas fa-brain fa-6x neon-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section-padded bg-secondary">
+            <div class="container">
+                <h2 class="neon-text">Наши Преимущества</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-microphone-alt neon-icon"></i>
+                        <h3>Голосовая Обработка</h3>
+                        <p>Моментальное распознавание и обработка речи любой сложности.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-language neon-icon"></i>
+                        <h3>Многоязычность</h3>
+                        <p>Поддержка широкого спектра языков для глобального использования.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-cogs neon-icon"></i>
+                        <h3>Интеллектуальный AI</h3>
+                        <p>Самообучающиеся алгоритмы для максимально точных ответов.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-cog neon-icon"></i>
+                        <h3>Персонализация</h3>
+                        <p>Aqua AI адаптируется под ваши предпочтения и привычки.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt neon-icon"></i>
+                        <h3>Безопасность</h3>
+                        <p>Ваши данные надежно защищены современными протоколами шифрования.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-robot neon-icon"></i>
+                        <h3>Постоянное Развитие</h3>
+                        <p>Регулярные обновления с новыми функциями и улучшениями.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="section-padded">
+            <div class="container">
+                <h2 class="neon-text">Попробуйте Aqua AI Прямо Сейчас!</h2>
+                <p>Нажмите на микрофон и произнесите любой запрос, чтобы ощутить мощь Aqua AI.</p>
+                <div class="demo-voice-area">
+                    <button id="demo-mic-btn" class="btn demo-btn pulse-effect">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <p id="demo-output" class="demo-status">Нажмите для начала записи голоса</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padded bg-secondary">
+            <div class="container">
+                <h2 class="neon-text">Свяжитесь с Нами</h2>
+                <p>Есть вопросы или предложения? Мы всегда рады общению!</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope
+neon-icon"></i> <a href="mailto:info@aquaa.ai"></a></p>
+                    <p><i class="fas fa-phone-alt neon-icon"></i> <a href="tel:+1234567890"></a></p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter neon-icon"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f neon-icon"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in neon-icon"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Aqua AI. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Условия использования</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ваш JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
